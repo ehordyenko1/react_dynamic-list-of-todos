@@ -27,13 +27,13 @@ export const TodoList: React.FC<Props> = ({ todos, onSelectTodo }) => {
           <tr key={todo.id} data-cy="todo">
             <td className="is-vcentered">{todo.id}</td>
             <td className="is-vcentered">
-              <span className="icon" data-cy="iconCompleted">
-                <i
-                  className={`fas fa-check ${
-                    todo.completed ? 'has-text-success' : 'has-text-grey-light'
-                  }`}
-                />
-              </span>
+              {todo.completed && (
+                <span className="icon" data-cy="iconCompleted">
+                  <i
+                    className={`fas fa-check ${todo.completed ? 'has-text-black' : 'has-text-grey-light'}`}
+                  />
+                </span>
+              )}
             </td>
             <td className="is-vcentered is-expanded">
               <p
